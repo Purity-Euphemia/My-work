@@ -4,7 +4,7 @@ import "fmt"
 
 func reverseArray(arr []int) []int {
 	reverse := []int{}
-	for count := len(arr) - 1; count < 0; count--{
+	for count := len(arr) - 1; count >= 0; count--{
 		reverse = append(reverse, arr[count])
 	}
 	return reverse
