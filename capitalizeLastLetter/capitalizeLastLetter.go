@@ -8,10 +8,10 @@ func capitalize(word string) string {
 	if len(word) == 0 {
 		return word
 	}
-	first := word[0] - 32
-	return string(first) + word[1:]
+	last := word[len(word)-1] - 32
+	return word[:len(word)-1] + string(last)
 }
-
+	
 func main() {
 	value := "hello"
 	fmt.Println(capitalize(value))
