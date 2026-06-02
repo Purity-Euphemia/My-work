@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 type DivideError struct {
 	Dividend float64
@@ -15,10 +18,20 @@ func divide(a, b float64)(float64, error) {
 	}
 	return a / b, nil
 }
+// func main() {
+// 	_, err := divide(4, 0)
+// 	if err != nil {
+// 		fmt.Println("Error:", err)
+// 	}
+// }
+
 func main() {
 	_, err := divide(4, 0)
 	if err != nil {
-		fmt.Println("Error:", err)
+		var divideErr *DivideError
+		if errors.As(err, &divideErr) {
+			fmt.Println("Caught a DivideError:", divideErr)
+		}
 	}
 }
 
