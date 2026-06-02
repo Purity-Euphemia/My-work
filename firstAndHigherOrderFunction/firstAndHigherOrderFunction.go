@@ -12,4 +12,6 @@ func processGreeting(f func(string)string, name string) {
 func main() {
 	message := greet("Spock")
 	fmt.Println(message)
+
+	processGreeting(greet, "Ripley")
 }
