@@ -11,7 +11,7 @@ func main() {
 	fmt.Println("starting the program")
 
 	panic("Something went wrong")
-	
-	fmt.Println("This will not be printed")
+
+	//fmt.Println("This will not be printed")
 
 }
