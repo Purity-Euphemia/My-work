@@ -36,7 +36,14 @@ func main() {
 
 	fmt.Println("Directory structure")
 	err = filepath.Walk(rootDir, func(path string, info so.FileInfo, err error) error {
-		if != 
+		if err!= nil {
+			return err
+		}
+		fmt.Println("-", path)
+		return nil
 	})
+	if err != nil {
+		log.Fatalf("Error walking the directory tree: %v", err)
+	}
 
 }
