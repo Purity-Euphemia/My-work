@@ -35,6 +35,8 @@ func main() {
 	fmt.Println("Absolute path of file:", absFilePath)
 
 	fmt.Println("Directory structure")
-	err = filepath.Walk(rootDir, func(path string, info))
+	err = filepath.Walk(rootDir, func(path string, info so.FileInfo, err error) error {
+		if != 
+	})
 
 }
