@@ -12,6 +12,7 @@ func main() {
 	if err := os.MkdirAll(nestedDir, 0755);err != nil {
 		log.Fatal("Error creating directions:", err)
 	}
+
 	fmt.Println("Directories created:", rootDir, "and", nestedDir)
 	filePath := filepath.Join(nestedDir, "file.txt")
 	fileContent := []byte("This is a sample file")
@@ -23,8 +24,17 @@ func main() {
 
 	absRootDir, err := filepath.Abs(rootDir)
 	if err != nil {
-		log.Fatalf("File created:", filePath)
+		log.Fatalf("Error getting absolute path: %v", err)
 	}
+	fmt.Println("Absolute path of root directory:", absRootDir)
+	absFilePath, err := filepath.Abs(filePath)
+	if err != nil {
+		log.Fatalf("Error getting absolute file path: %v", err)
+	}
+	fmt.Println("Absolute path of file:", absFilePath)
+	fmt.Println("Absolute path of file:", absFilePath)
 
+	fmt.Println("Directory structure")
+	err = filepath.Walk(rootDir, func(path string, info))
 
 }
