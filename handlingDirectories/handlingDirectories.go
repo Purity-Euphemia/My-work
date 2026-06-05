@@ -46,4 +46,9 @@ func main() {
 		log.Fatalf("Error walking the directory tree: %v", err)
 	}
 
+	if err := os.RemoveAll(rootDir); err != nil {
+		log.Fatalf("Error removing directory: %v", err)
+	}
+	fmt.Println("Directories and files cleaned up")
+
 }
