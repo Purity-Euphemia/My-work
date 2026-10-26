@@ -1,0 +1,2 @@
+def doubleNumber(number):
+    return number * 2
